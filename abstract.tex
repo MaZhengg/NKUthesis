@@ -2,48 +2,26 @@
 
 
 \begin{zhaiyao}
-
-随着计算机网络技术的不断提高，复杂系统迅速发展，基于复杂系统的多智能体系统的优良特性日益凸显。采用多个简单廉价的智能体协调完成复杂任务来代替单个复制昂贵的系统，节省成本的同时提高了整个系统的灵活性和鲁棒性。多智能体显现出来的强大的功能和优势，使其在自然科学、社会生活的各个领域具有很强的应用前景，吸引了越来越多专家们的关注。在多智能体系统协调控制中，分布式控制协议的设计成为至关重要的问题，该文基于节省能量的动机，从控制协议设计的角度重点研究了多智能体系统的协调控制中的两个基本问题，即一致性和编队控制问题。论文的主要内容和研究成果包括以下几个方面：
-
-(1)	对于领导者速度不可实时监测的非线性多智能体系统，提出了基于速度观测器的间歇一致性控制协议，控制器间歇性工作的特点减少了单位时间内信息的传递量，从而节省了能量。针对间歇控制协议下的闭环切换系统的动态特征，利用时变切换李雅普诺夫函数技术分析闭环误差系统的稳定性，在固定拓扑和切换拓扑情况下，分别得到了一些充分条件使得跟随者渐近跟踪领导者。最后将结论扩展含有时滞的非线性多智能体系统。
-
-(2)	针对系统状态不可测的线性时滞多智能体系统，设计了不连续的脉冲观测器，其特征是只在瞬时时刻进行观测器自身状态的更新。在同时考虑系统自时滞和通信时滞的情况，基于具有脉冲机制的脉冲观测器设计了分布式一致性控制协议。构造了一个新的分段李雅普诺夫函数来分析具有脉冲效应的闭环误差系统的稳定性，得到了具有线性矩阵不等式形式的充分条件，从而保证了多智能体系统最终达到渐近一致，并给出了控制增益和观测器增益矩阵的求解方法。
-
-(3)	对于含有时滞非线性多智能体系统，利用网络突变过程中与智能体瞬间接触的邻居智能体那里获得的信息，设计了脉冲一致性控制策略，其特点是在一些离散点以脉冲跳跃方式瞬间改变系统状态。利用李雅普诺夫函数方法并结合脉冲控制理论分别在固定拓扑和切换拓扑结构下分析误差系统的稳定性，给出了使跟随者以期望编队跟踪领导者的充分条件。最后考虑了领导者受到有界干扰的情况，同样设计了脉冲控制协议实现了多智能体系统的达到期望的编队。
-
-(4)	对于含有内部不确定和外部干扰的多智能体系统，在系统状态不可测的情况下，设计了线性扩张状态观测器(LESO)来同时估计系统的状态和系统总的不确定。基于 LESO的观测信息，提出分布式控制协议对系统的总扰动进行实时的估计和补偿，从而有效地抑制了扰动带来的输出误差，大大节省了能量。在系统动态完全已知的情况下，得到了一些充分条件使得多智能体系统在渐近跟踪领导者的同时达到了期望的编队；在系统动态未知且有外部干扰的情况下，得到LESO 的估计误差和系统跟踪误差都是有界的，并且智能体之间达到了期望的编队。
-
+测试摘要提出了一种基于分段设计的动力翼伞轨迹规划方法： 借鉴传统翼伞分段归航轨迹设计方法，根据动力翼伞的实际工况，加入了动力翼伞的任务执行阶段。根据各阶段的几何关系，将轨迹规划问题转换为几何参数的寻优问题。采用量子遗传算法对目标函数进行寻优计算， 得出各段轨迹几何参数。考虑到由于飞行高度过低动力翼伞无法到达目标点的情况，将额外的高度作为新的变量加入到目标函数中进行优化，所得结果转换为额外的飞行时间通过动力翼伞的等高飞行进行抵消。仿真分析验证了该设计方法的可行性和有效性。
 \end{zhaiyao}
 
+\vskip 4mm
 \noindent
-\begin{tabular}{rl}
-{\rmfamily\jiacu 关键词：}&多智能体系统, 一致性, 编队控制, 间歇控制, 脉冲观测器, 脉冲控制, \\
- &线性扩张状态观测器, 非线性动态
-\end{tabular}
+{\rmfamily\jiacu 关键词：}
+\begin{minipage}[t]{0.88\linewidth}
+多智能体系统, 一致性, 编队控制, 间歇控制, 脉冲观测器, 脉冲控制, 线性扩张状态观测器, 非线性动态
+\end{minipage}
+
 
 
 
 \begin{abstract}
-Due to the booming of computer network technology, complex networks have experienced a rapid development. Based on the complex network, this gives rise to a very active and exciting research field—multi-agen systems with excellent properties. Many benefits can be obtained when replacing a solo complicated system with several simple systems which enjoys low cost, high flexibility and great robustness. Multi-agent systems have has sparked the attention of many researchers for their strong application prospects. It is worth noting that the design of distributed control protocol is of importance in the field of coordination control problem for multi-agent systems. In this paper, motivated of the idea of energy-saving, the consensus and formation control for multi-agent systems are investigated from the perspective of the design of distributed control protocol. The main work and research results lie in the following:
-
-(1)	Observer-based intermittent consensus control for nonlinear multi-agent systems
-The tracking consensus for leader-following multi-agent systems is investigated in the third chapter. In practice, the velocity of the leader is commonly not obtained online, and the agents may communicate with their neighbors intermittently due to bandwidth limitations or external disturbances and so on. To deal with these situations, a distributed observer is designed for each agent to estimate the velocity of the active leader, and then a distributed intermittent formation control protocol based on the above observer is developed for the delayed nonlinear multi-agent system. The closed-loop dynamical system under intermittent control can be viewed as a classical switched system. Some sufficient conditions which ensure the achievement of tracking consensus for the multi-agent system are given under fixed topology by time-variyng Lyapunov function technology. The result under fixed topology is extended to that in switching topology.
-
-(2)	 Intermittent consensus control for nonlinear multi-agent systems with time-delay Based on the result of the Charpter 3, the intermittent control for the leader-following multi-agent system with time-delay is addressed. Combining with the pinning control, the intermittent control based on velocity observer is designed. With the aid of time-delay differential inequality and Lyapunov function method, in order to achieve the tracking consensus for the multi-agent system, some sufficient conditions are derived under both fixed topology and switching topology by analyzing the stability of the closed-loop switched system, and the range of control gain is obtained at the same time.
-
-(3)	 Impulsive observer-based consensus control for multi-agent systems with time-delay The main work in the Charpter 5 is that the design of the impulsive observer aiming at the unmeasurement of the state of the system. The output of the linear multi-agent system studied in this part is only available at discrete time instants. Based on the idea of saving energy, in view of that the system state is unmeasurable, a kind of discontinuous impulsive observer which is updated in an impulsive fashion is designed to estimate the state of the system continuously. Due to the reduced transmission of sampled output information from the system to the observer, the on-line computations are reduced, furthermore, the bandwidth usage and communication cost has been saved, saving energy and improving quality, all at the same time. Considering the time-delay from the system itself and communication among agents, an impulsive observer-based distributed consensus protocol is designed which makes the closed-loop system be impulsive system. In view of the dynamic characteristics of closed-loop system, a time-varying Lyapunov function is constructed to analyze its stability theoretically, and some sufficient conditions in terms of linear matrix inequalities (LMIs) are derived to realize the consensus of the multi-agent system.
-
-(4)	 Impulsive formation control for the time-delay multi-agent system with disturbance
-Motivated from the view of energy conservation, the impulsive control strategy is designed in the Charpter 6 to realize the formation control for the leader-following multi-agent system with time-delay. Due to the network may experience abrupt changes or suffer from the sudden interference, the impulsive control algorithm is proposed using the information from the neighbours instantaneously contact with the agent to achieve the tracking formation for the multi-agent system. Some sufficient conditions are obtained under both fixed and switching topology. Furthermore, the impulsive control protocol is designed for the case that the leader system is in a noise invironment, which solves the formation control for the leader-follower multi-agent system.
-
-(5)	 Formation control for multi-agent systems based on the linear extended state observer The object discussed in the Charpter 7 is the second order multi-agent system with nonlinear uncertainty. Assume that the state of the agent is unmeasurable and taking into account the uncertainty both in system itself and the external disturbance, the linear extended state observer (LESO) is designed to estimate both the state of the system and the uncertainty of the system. Based on LESO, the active disturbance rejection control (ADRC) is proposed to compensate the total uncertainty of the system which brings the inhibition of the output error resulted from total uncertainty, saving energy at the same time. Some sufficient conditions are derived to ensure that the followers asymptotically track the leader in desired formation in the face of completely known system dynamics. Even when there are large system uncertainties, the estimation and tracking errors are shown to be bounded and the desired formation among agents is achieved.
-
+As a kind of special vehicle, the flexible vehicle uses the flexible fabric as itsmaterial, and has the aerodynamic characteristics that the conventional vehicles donot possess. With the development of aerospace techonology, the research on theflexible vehicle is gradually becoming the hotpot home and abroad. This papermainly studies two kinds of the flexible vehicles: high altitude airship and poweredparafoil. Aiming at the issues of the thermodynamic model, super-pressure controlproject, horizontal trajectory control of the airship, and the dynamic model, trajectoryplanning, trajectory tracking control of the powered parafoil, some viewpoints andmethods are presented, and some research production are obtained.
 \end{abstract}
 
+\vskip 4mm
 \noindent
-\begin{tabular}{rl}
-{\rmfamily\bfseries Key words:}&multi-agent systems (MAS), consensus, formation control, impulsive\\
-                                               &observer, impulsive control, linear extended state observer (LESO), \\
-                                               &active disturbance rejection control (ADRC), time-delay, uncertainty,\\
-                                               & leader, nonlinear dynamics
-\end{tabular}
+{\rmfamily\jiacu Key Words:}
+\begin{minipage}[t]{0.88\linewidth}
+multi-agent systems (MAS), consensus, formation control, impulsive observer, impulsive control, linear extended state observer (LESO),active disturbance rejection control (ADRC), time-delay, uncertainty,  leader, nonlinear dynamics
+\end{minipage}
